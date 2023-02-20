@@ -1,0 +1,11 @@
+{
+    "count": 1279,
+    "next": "https://pokeapi.co/api/v2/pokemon?offset=708&limit=1",
+    "previous": "https://pokeapi.co/api/v2/pokemon?offset=706&limit=1",
+    "results": [
+        {
+            "name": "phantump",
+            "url": "https://pokeapi.co/api/v2/pokemon/708/"
+        }
+    ]
+}

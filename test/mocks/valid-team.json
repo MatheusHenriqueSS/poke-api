@@ -1,0 +1,26 @@
+[
+    {
+        "name": "bellsprout",
+        "moves": [
+            "swords-dance",
+            "cut",
+            "bind"
+        ]
+    },
+    {
+        "name": "golbat",
+        "moves": [
+            "razor-wind",
+            "wing-attack",
+            "whirlwind"
+        ]
+    },
+    {
+        "name": "phantump",
+        "moves": [
+            "cut",
+            "tackle",
+            "disable"
+        ]
+    }
+]

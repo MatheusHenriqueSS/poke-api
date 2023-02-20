@@ -1,0 +1,11 @@
+{
+    "count": 1279,
+    "next": "https://pokeapi.co/api/v2/pokemon?offset=69&limit=1",
+    "previous": "https://pokeapi.co/api/v2/pokemon?offset=67&limit=1",
+    "results": [
+        {
+            "name": "bellsprout",
+            "url": "https://pokeapi.co/api/v2/pokemon/69/"
+        }
+    ]
+}
