@@ -1,5 +1,9 @@
 import { TeamRepository } from "../repository/TeamRepository";
 
+interface Pokemon {
+    name: string;
+    moves: string[];
+}
 export class TeamService {
     teamRepository: TeamRepository;
     private pokemonTeamSize = 3;
@@ -20,7 +24,7 @@ export class TeamService {
     async getPokemonTeam() {
         const maxId = await this.getTotalPokemonsCount();
 
-        const ids: number[] = [];
+        let ids: number[] = [];
         for (let i = 0; i < this.pokemonTeamSize; i++) {
             let curId = this.getRandomNumberUnderMax(maxId);
             while(ids.includes(curId)) curId = this.getRandomNumberUnderMax(maxId);
@@ -28,9 +32,14 @@ export class TeamService {
         }
 
         return await Promise.all(ids.map(async (id) => {
-            const pokemon = await this.teamRepository.getPokemonById(id);
-            if(!pokemon) throw new Error("Failed to fetch pokemon");
-            pokemon.moves = pokemon.moves.splice(0, 3);
+            const result = await this.teamRepository.getPokemonById(id);
+            if(!result) throw new Error("Failed to fetch pokemon");
+
+            const pokemon: Pokemon = {
+                name: result.name,
+                moves: result.moves.splice(0, 3).map(mv => mv.name)
+            }
+
             return pokemon;
         }));
 
