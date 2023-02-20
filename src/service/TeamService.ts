@@ -1,6 +1,6 @@
 import { TeamRepository } from "../repository/TeamRepository";
 
-interface Pokemon {
+export interface Pokemon {
     name: string;
     moves: string[];
 }
